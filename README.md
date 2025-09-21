@@ -1,0 +1,2 @@
+# EAD
+EEG Artifact Detection
