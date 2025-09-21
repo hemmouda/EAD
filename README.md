@@ -1,2 +1,3 @@
-# EAD
-EEG Artifact Detection
+The code for the preprocessing steps is available.
+
+Later on I do plan to add the code for the dataset modling (grouping the data patient wise) and other relevant files to this repo as well...
