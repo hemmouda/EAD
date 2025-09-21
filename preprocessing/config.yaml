@@ -1,0 +1,82 @@
+# What concerns the data splitting. If a datasplit file is provided then this is ignored.
+split:
+
+  # The amount of subjects to use. Null to use everything.
+  amount: 30
+
+  # Whether the amounts to give each split are percentages or absolute amounts
+  as_percentage: True
+
+  # The values only need to not surpass 100% of the amount
+  train: 60
+  val: 20
+  test: 20
+
+  # How tolerant is the datasplit (keeping the age and gender distribution) or Null for "just split the data". [0, inf)
+  tol: 0.25
+
+# Either a list of channel names to use, or Null to use all the channels
+channels: Null
+  # - 'FP1-F7'
+  # - 'F7-T3'
+  # - 'T3-T5'
+  # - 'T5-O1'
+
+# What concerns the data cleaning
+clean:
+
+  # List of steps to do (one after the other). Downsampling is mandatory
+  steps:
+    - 'downsample'
+    - 'butterworth'
+    # - 'fir' # TODO: implement
+    - 'notch'
+    - 'clip'
+
+  # The different filters params
+  butterworth:
+    high_pass: 0.5
+    low_pass: 55
+    order: 2
+  # TODO: include fir, if you want
+  notch:
+    freq: 60
+    quality: 30
+
+  # The new down sampling frequency
+  new_frequency: 125
+
+  # Clipping range (absolute value)
+  clipping_value: 500
+
+# What concerns data labelling and annotating
+label:
+
+  # The length of the data chunks in seconds. If you want to have it be a specific number of data
+  # points then just put number/new_frequency, e.g. to split the data in chunks of 11500 sample points
+  # and the new_frequency is 100, then 11500 / 100 = 115... 
+  chunk_duration: 20
+
+  # The training split
+  train:
+
+    # Either a list of artifacts to label, or Null to use all
+    artifact: Null
+      # - 'musc'
+      # - 'eyem_musc'
+      # - 'musc_elec'
+    
+    # Whether to balance the data or not using under sampling (so that there is approximately the same duration of artifacts as background)
+    balance: True
+
+  # Optional: Inherits the train values, but you can override specific values
+  val:
+    balance: False
+  
+  # Optional: Inherits the train values, but you can override specific values
+  test:
+    balance: True
+
+# What does not work that we tried before / what we are not doing:
+# - Using seizure data.
+# - Rescaling or normalizing the data.
