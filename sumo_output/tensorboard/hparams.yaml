@@ -1,0 +1,104 @@
+config: !!python/object:sumo.config.config.Config
+  activation: !!python/name:torch.nn.modules.activation.ReLU ''
+  augmentation: false
+  augmentation_params:
+    scaling_factor_range: 0.5
+  batch_size: 12
+  channel_size: 16
+  convolution_params:
+    dilation: 2
+    kernel_size: 5
+    padding: same
+  cross_validation: null
+  data_dir: !!python/object/apply:pathlib.PosixPath
+  - /
+  - home
+  - users
+  - ahemmouda
+  - documents
+  - kys
+  - core
+  - sumo
+  - input
+  data_file: !!python/object/apply:pathlib.PosixPath
+  - /
+  - home
+  - users
+  - ahemmouda
+  - documents
+  - kys
+  - core
+  - sumo
+  - input
+  - subjects.pickle
+  depth: 2
+  early_stopping: 300
+  experiment: default
+  float32_matmul_precision: highest
+  loss: !!python/name:sumo.loss.loss.GeneralizedDiceLoss ''
+  loss_params: {}
+  lr_scheduler: null
+  lr_scheduler_params: {}
+  moving_avg_size: 42
+  n_classes: 2
+  n_epochs: 800
+  optimizer: !!python/name:torch.optim.adam.Adam ''
+  optimizer_params:
+    betas:
+    - 0.9
+    - 0.999
+    eps: 1.0e-08
+    lr: 0.005
+    weight_decay: 0.0
+  output_dir: !!python/object/apply:pathlib.PosixPath
+  - /
+  - home
+  - users
+  - ahemmouda
+  - documents
+  - kys
+  - core
+  - sumo
+  - output
+  - default_2025-09-02_07-08-38
+  overlap_thresholds: !!python/object/apply:numpy._core.multiarray._reconstruct
+    args:
+    - !!python/name:numpy.ndarray ''
+    - !!python/tuple
+      - 0
+    - !!binary |
+      Yg==
+    state: !!python/tuple
+    - 1
+    - !!python/tuple
+      - 21
+    - !!python/object/apply:numpy.dtype
+      args:
+      - f8
+      - false
+      - true
+      state: !!python/tuple
+      - 3
+      - <
+      - null
+      - null
+      - null
+      - -1
+      - -1
+      - 0
+    - false
+    - !!binary |
+      AAAAAAAAAACamZmZmZmpP5qZmZmZmbk/NDMzMzMzwz+amZmZmZnJPwAAAAAAANA/NDMzMzMz0z9n
+      ZmZmZmbWP5qZmZmZmdk/zczMzMzM3D8AAAAAAADgP5qZmZmZmeE/NDMzMzMz4z/NzMzMzMzkP2dm
+      ZmZmZuY/AAAAAAAA6D+amZmZmZnpPzQzMzMzM+s/zczMzMzM7D9nZmZmZmbuPwAAAAAAAPA/
+  pools:
+  - 4
+  - 4
+  preprocessing: false
+  run_name: default_2025-09-02_07-08-38
+  test_split_name: test
+  train_split_name: train
+  trainer_args:
+    devices: 1
+    num_sanity_val_steps: 0
+  val_split_name: val
