@@ -1,5 +1,3 @@
-The code for the preprocessing steps is available.
-
-Later on I do plan to add the code for the dataset molding (grouping the data patient wise) and other relevant files to this repo as well.
+Everything as is right now just provides access to the code and relevant resources. Later on I will better document and organize the repo.
 
 Full / more detailed citations are in the paper.
