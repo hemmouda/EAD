@@ -16,7 +16,8 @@ def convert(
 
     print(f"\nConverting the Patients into SUMO2 Subjects...")
 
-    sys.path.append(os.path.join(os.path.dirname(__file__), "sumo"))
+    sys.path.append(os.path.join(os.path.dirname(__file__), "sumo_src"))
+    # The import is here instead of up because it take a long while
     from sumo.data import Subject
 
     new_splits = {}

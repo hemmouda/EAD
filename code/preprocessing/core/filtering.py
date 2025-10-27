@@ -4,7 +4,7 @@
 # the edf file path to another dict of channel names
 # and their corresponding numpy filtered signal.
 
-import pyedflib
+import pyedflib  # F*ck MNE.
 import numpy as np
 from scipy.signal import resample_poly, sosfiltfilt, butter, iirnotch, filtfilt
 from tqdm import tqdm

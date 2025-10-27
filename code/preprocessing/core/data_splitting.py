@@ -4,11 +4,15 @@
 # representative in terms of gender and age with regards to the
 # whole population (all of the dataset in the data dir).
 
+DATA_DIR = None
+assert (
+    DATA_DIR is not None
+), f"You need to put the molded dataset folder path in the variable above!"
+
 import os
 import yaml
 import statistics
 import random
-from .consts import DATA_DIR
 from .config_reader import Config
 
 
@@ -57,6 +61,7 @@ class Patient:
             - edfs: {edf_file_1_path -> csv_file_1_path, edf_file_2_path -> csv_file_2_path, ...}
         """
         self.dir = patient_dir
+
         info_file = [f for f in os.listdir(patient_dir) if f.endswith("_info.txt")][0]
         info_path = os.path.join(patient_dir, info_file)
 
@@ -67,9 +72,9 @@ class Patient:
                     key, val = line.strip().split(":", 1)
                     info[key.strip().lower()] = val.strip()
 
-        self.name = info.get("human-readable name")
+        self.name = info.get("human name")
         self.gender = info.get("gender")
-        self.age = int(info.get("age"))
+        self.age = float(info.get("age"))
 
         edf_files = [f for f in os.listdir(patient_dir) if f.endswith(".edf")]
         csv_files = [f for f in os.listdir(patient_dir) if f.endswith(".csv")]

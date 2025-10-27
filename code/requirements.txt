@@ -1,0 +1,14 @@
+numpy
+pyedflib
+tqdm
+pyyaml
+scipy
+pandas
+matplotlib
+lightning
+scikit-learn
+mne
+tensorboard
+jupyter
+seaborn
+tabulate

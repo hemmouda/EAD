@@ -1,8 +1,10 @@
+# The config file. These values are the ones used with the best model. (But using the defined data split)
+
 # What concerns the data splitting. If a datasplit file is provided then this is ignored.
 split:
 
   # The amount of subjects to use. Null to use everything.
-  amount: 30
+  amount: Null
 
   # Whether the amounts to give each split are percentages or absolute amounts
   as_percentage: True
@@ -27,24 +29,22 @@ clean:
 
   # List of steps to do (one after the other). Downsampling is mandatory
   steps:
-    - 'downsample'
     - 'butterworth'
-    # - 'fir' # TODO: implement
     - 'notch'
+    - 'downsample' # required
     - 'clip'
 
   # The different filters params
   butterworth:
     high_pass: 0.5
-    low_pass: 55
-    order: 2
-  # TODO: include fir, if you want
+    low_pass: 80
+    order: 5
   notch:
     freq: 60
-    quality: 30
+    quality: 15
 
   # The new down sampling frequency
-  new_frequency: 125
+  new_frequency: 170
 
   # Clipping range (absolute value)
   clipping_value: 500
@@ -55,7 +55,7 @@ label:
   # The length of the data chunks in seconds. If you want to have it be a specific number of data
   # points then just put number/new_frequency, e.g. to split the data in chunks of 11500 sample points
   # and the new_frequency is 100, then 11500 / 100 = 115... 
-  chunk_duration: 20
+  chunk_duration: 10
 
   # The training split
   train:
@@ -67,7 +67,7 @@ label:
       # - 'musc_elec'
     
     # Whether to balance the data or not using under sampling (so that there is approximately the same duration of artifacts as background)
-    balance: True
+    balance: False
 
   # Optional: Inherits the train values, but you can override specific values
   val:
@@ -75,8 +75,4 @@ label:
   
   # Optional: Inherits the train values, but you can override specific values
   test:
-    balance: True
-
-# What does not work that we tried before / what we are not doing:
-# - Using seizure data.
-# - Rescaling or normalizing the data.
+    balance: False

@@ -13,14 +13,15 @@ def run(cfg: Config, splits: dict) -> None:
     """Trains SUMO2 on the data and reports the results."""
 
     # Create variables needed
-    raise AssertionError(f"TODO: FIX THIS TO USE THE CONST FILE.")  # Sowwy.
-    SUMO_BASE = os.path.join(os.path.dirname(__file__), "sumo")
+    SUMO_BASE = os.path.join(os.path.dirname(__file__), "sumo_src")
     SUMO_TRAIN = os.path.join(SUMO_BASE, "bin", "train.py")
     SUMO_INPUT_DIR = os.path.join(SUMO_BASE, "input")
     SUMO_CONFIG = os.path.join(SUMO_BASE, "config", "default.yaml")
     SUMO_OUTPUT_DIR = os.path.join(SUMO_BASE, "output")
 
-    RUN_SUMO_DIR = os.path.join(cfg.output, "sumo_output")
+    RUN_SUMO_DIR = os.path.join(
+        cfg.output, "sumo_output"
+    )  # Where we store SUMO result in our run folder
     os.makedirs(RUN_SUMO_DIR)
 
     cfg.add_info(f"\nSUMO_BASE: {SUMO_BASE}")
@@ -38,7 +39,7 @@ def run(cfg: Config, splits: dict) -> None:
 
     # Save the data
     pickled_data_path = cfg.save_splits(SUMO_INPUT_DIR, splits)
-    # Clear the object (we ain't rich on RAM)
+    # Clear the object (I'm not rich on RAM)
     for _, subject in splits.items():
         del subject
     splits.clear()

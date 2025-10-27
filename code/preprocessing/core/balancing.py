@@ -2,7 +2,7 @@
 # so that data is split into chunks
 # then all the patient data is aggregated
 # and then balanced. The result is stored
-# in x and y in the patient.
+# in x and y in the patient object.
 
 import numpy as np
 from tqdm import tqdm

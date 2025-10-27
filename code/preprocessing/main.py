@@ -29,7 +29,7 @@ parser.add_argument(
 parser.add_argument(
     "-v",
     "--visualize",
-    help="Stop after processing and labeling the data and save it because I want to visualize it.",
+    help="Stop after processing and labeling the data and save it if you want to visualize it (does not balance it or convert it to SUMO2 Subjects).",
     action="store_true",
 )
 
