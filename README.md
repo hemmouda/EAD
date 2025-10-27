@@ -1,4 +1,4 @@
-# EAD - EEG Artifact Detection via Time Series Segementation
+# <ins>EAD</ins> - <ins>E</ins>EG <ins>A</ins>rtifact <ins>D</ins>etection via Time Series Segementation
 
 For my Seminar at the FH-Aachen university, I've worked on training a U-Net based model to be able to detect EEG Artifacts:
 
