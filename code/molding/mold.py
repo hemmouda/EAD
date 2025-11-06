@@ -155,7 +155,9 @@ print("Affected patients:", affected_patients)
 print("Deleted patients:", deleted_patients)
 
 # Affected patients: ['ulrich', 'joanna', 'ian', 'oscar', 'martin', 'samuel', 'amelia', 'leo', 'owen', 'wendy', 'natalie']
+# ['aaaaajrj', 'aaaaamhb', 'aaaaajns', 'aaaaapas', 'aaaaabiw', 'aaaaajqo', 'aaaaakbz', 'aaaaagqb', 'aaaaacyf', 'aaaaaouk', 'aaaaalth']
 # Deleted patients: ['renate', 'victor', 'gabriella', 'thea', 'elena', 'freya', 'theresa', 'daniel', 'leonard', 'kurt', 'nadine', 'vincent', 'hannah', 'brian', 'martha', 'heidi', 'ethan']
+# ['aaaaamoa', 'aaaaabnn', 'aaaaagcs', 'aaaaajoe', 'aaaaafwz', 'aaaaalnt', 'aaaaabms', 'aaaaaayg', 'aaaaamtj', 'aaaaaprj', 'aaaaaltw', 'aaaaaogk', 'aaaaatjz', 'aaaaapkv', 'aaaaaike', 'aaaaamyy', 'aaaaaelb']
 
 
 # -------------------- STEP 3 --------------------
